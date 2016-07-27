@@ -1,4 +1,4 @@
-#include "SR04.h"
+#include <SR04.h>
 
 SR04 ultrasonic = SR04(2,3);
 void setup()
@@ -7,7 +7,7 @@ void setup()
 }
 void loop()
 {
-  float distance=sr04.GetDistance();
+  float distance=ultrasonic.GetDistance();
   Serial.print(distance);
   Serial.print("cm");
   Serial.println(); 
