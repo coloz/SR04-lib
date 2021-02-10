@@ -7,7 +7,7 @@ void setup()
 }
 void loop()
 {
-  float distance=ultrasonic.GetDistance();
+  float distance=ultrasonic.getDistance();
   Serial.print(distance);
   Serial.print("cm");
   Serial.println(); 

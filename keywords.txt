@@ -1,2 +1,2 @@
 SR04	KEYWORD1
-GetDistance	KEYWORD2
+getDistance	KEYWORD2

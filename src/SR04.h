@@ -5,12 +5,12 @@
 
 class SR04 {
 public:
-	SR04(int TrigPin,int EchoPin);
-	float GetDistance();
+	SR04(int tp,int ep);
+	float getDistance();
 
 private:
-	int Trig_pin;
-	int Echo_pin;
+	int trig_pin;
+	int echo_pin;
 	float distance;
 };
 #endif
