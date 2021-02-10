@@ -1,14 +1,15 @@
 #include <SR04.h>
 
-SR04 ultrasonic = SR04(2,3);
+SR04 ultrasonic = SR04(2, 3);
 void setup()
 {
-  Serial.begin(9600); 
+  Serial.begin(9600);
 }
+
 void loop()
 {
-  float distance=ultrasonic.getDistance();
+  float distance = ultrasonic.getDistance();
   Serial.print(distance);
   Serial.print("cm");
-  Serial.println(); 
+  Serial.println();
 }

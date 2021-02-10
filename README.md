@@ -4,6 +4,40 @@ Arduino SR04超声波库例程
 
 2021变更如下：  
 
+## 不适用类库直接驱动示例  
+```c++
+float distance;
+
+void initSR04(int tp,int ep) {
+  pinMode(tp, OUTPUT);
+  pinMode(ep, INPUT);
+}
+
+float getDistance(int tp,int ep) {
+  //产生一个10μs的高脉冲触发TrigPin
+  digitalWrite(tp, LOW);
+  delayMicroseconds(2);
+  digitalWrite(tp, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(tp, LOW);
+  float distance = pulseIn(ep, HIGH) / 58.0;
+  return distance;
+}
+
+void setup() {
+  initSR04(2,3);
+  Serial.begin(9600);
+}
+
+void loop() {
+  distance= getDistance(2,3);
+  Serial.print(distance);
+  Serial.print("cm");
+  Serial.println();
+  delay(1000);
+}
+```
+
 ## 命名规则
 
 1. 变量名一律小写，单词用下划线相连，如：trig_pin、distance。    
